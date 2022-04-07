@@ -1,24 +1,15 @@
-# README
+## アプリケーション名
+NegotiLands
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## URL
+https://negotilands.herokuapp.com/
+(実装開始日：4/7,随時デプロイしていきます)
 
-Things you may want to cover:
+## アプリケーション概要
+メタバースで変える土地の所有者（貸し手）と利用者（借り手）をマッチングするアプリ
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## アプリケーションを作成した背景
+最近メタバースやNFTというワードが注目されている。特にメタバースの中の土地は、ブロックチェーン技術により、現実世界の土地のように用途が多岐にわたるようになったため、高額で取引されている。
+一方で、まだその歴史が浅いためか、不動産ビジネスがあまり発展していないように感じた。
+例えば、仮想世界の土地の売買の場は、他のNFTと同様にある程度環境が整っている。しかし、「土地を貸して定期的に利益を得る」、「土地を借りて建物を建設し、それを用いて利益を得る」といった、現世界では当たり前のように行われている不動産ビジネスができるマーケットプライスがないように思えた。
+以上の理由から、今回のアプリケーションの実装に至った。
