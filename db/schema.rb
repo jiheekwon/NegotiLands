@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_07_082905) do
+ActiveRecord::Schema.define(version: 2022_04_08_094920) do
+
+  create_table "lands", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "platform_id", null: false
+    t.integer "location_x", null: false
+    t.integer "location_y", null: false
+    t.integer "fee_num", null: false
+    t.integer "fee_mdy_id", null: false
+    t.integer "term_num", null: false
+    t.integer "term_mdy_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_lands_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
@@ -25,4 +39,5 @@ ActiveRecord::Schema.define(version: 2022_04_07_082905) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "lands", "users"
 end
