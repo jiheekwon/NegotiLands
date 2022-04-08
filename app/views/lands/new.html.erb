@@ -1,0 +1,22 @@
+<%= form_with model: @land, url: lands_path, local: true do |f| %>
+    <%= f.label :image %><br/>
+    <%= f.file_field :image %><br/>
+
+    <%= f.label :platform %><br/>
+    <%= f.collection_select(:platform_id, Platform.all, :id, :name, {}) %><br/>
+
+    Location<br/>
+    <%= f.text_field :location_x %>
+    <%= f.text_field :location_y %><br/>
+
+    Fee<br/>
+    $<%= f.text_field :fee_num %>
+    /<%= f.collection_select(:fee_mdy_id, FeeMdy.all, :id, :name, {}) %><br/>
+
+    Term<br/>
+    <%= f.text_field :term_num %>
+    <%= f.collection_select(:term_mdy_id, TermMdy.all, :id, :name, {}) %><br/>
+
+    <%= f.submit "Submit" %>
+
+<% end %>
