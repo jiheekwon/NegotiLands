@@ -1,0 +1,34 @@
+<div>
+  <% if @land.image.attached? %>
+    <%= image_tag @land.image %>
+  <% else %>
+    <%= image_tag 'noimage.png', size: '300x300' %>
+  <% end %>
+</div>
+
+<div>
+  Location
+  <%= @land.location_x %> : <%= @land.location_y %>
+</div>
+
+<div>
+  Fee
+  $<%= @land.fee_num %>/<%= @land.fee_mdy.name %>
+</div>
+
+<div>
+  Term
+  <%= @land.term_num %>/<%= @land.term_mdy.name %>
+</div>
+
+<div>
+  Lender
+  <%= @land.user.nickname %>
+</div>
+
+<% if user_signed_in? && @land.user_id == current_user.id %>
+  <%= link_to "Edit", edit_land_path(@land) %>
+  <%= link_to "Remove", root_path %>
+<% else %>
+  <%= link_to "Contact", root_path %>
+<% end %>

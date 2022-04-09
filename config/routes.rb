@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :lands, only: [:new, :create]
+  root to: "lands#top"
+  resources :lands
 end
