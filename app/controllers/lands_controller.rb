@@ -1,7 +1,6 @@
 class LandsController < ApplicationController
-
-  def top
-  end
+  before_action :move_to_index, only: [:edit, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
   end
@@ -46,5 +45,11 @@ class LandsController < ApplicationController
   def land_params
    params.require(:land).permit(:image, :platform_id, :location_x, :location_y, :fee_num,
                                 :fee_mdy_id, :term_num, :term_mdy_id).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    if user_signed_in? && current_user.id != @item.user_id
+      redirect_to root_path
+    end
   end
 end
