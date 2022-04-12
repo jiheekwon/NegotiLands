@@ -1,0 +1,34 @@
+.header{
+  background-color: black;
+}
+
+.header-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  color: white;
+}
+
+.right-header{
+  padding-top: 4px;
+  font-size: 20px;
+  position: relative;
+}
+
+.logo-name{
+  line-height: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 20;
+}
+
+.logo-img{
+  position: absolute;
+  top: -10px;
+  left: 40px;
+  z-index: 10;
+}
+
+.left-header .link{
+  color: white;
+}

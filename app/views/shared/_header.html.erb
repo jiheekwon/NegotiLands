@@ -1,6 +1,21 @@
-<% if user_signed_in? %>
-  <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
-<% else %>
-  <li><%= link_to 'ログイン', new_user_session_path %></li>
-  <li><%= link_to '新規登録', new_user_registration_path %></li>
-<% end %>
+<div class="header">
+  <div class="header-container">
+    <div class="right-header">
+      <div class="logo-name">
+        Negoti<br/>Lands
+      </div>
+      <div class="logo-img">
+        <%= image_tag "logo.png", size: "50x50"%>
+      </div>
+    </div>
+
+    <div class="left-header">
+      <% if user_signed_in? %>
+        <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "link" %></li>
+      <% else %>
+        <li><%= link_to 'Login', new_user_session_path, class: "link" %></li>
+        <li><%= link_to 'Signup', new_user_registration_path, class: "link" %></li>
+      <% end %>
+    </div>
+  </div>
+</div>
