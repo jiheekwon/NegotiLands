@@ -1,4 +1,21 @@
-<li><%= link_to 'Decentraland', platforms_decentraland_path %></li>
-<li><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
-<li><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
-<li><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
+<div class="top-image">
+</div>
+
+<div class="map-container">
+  <div class="decentraland">
+    <li><%= link_to 'Decentraland', platforms_decentraland_path %></li>
+    <%= image_tag 'decentraland_map2.png', size: '300x300'%>
+  </div>
+  <div class="thesandbox">
+    <li><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
+    <%= image_tag 'thesandbox_map2.png', size: '300x300'%>
+  </div>
+  <div class="cryptovoxels">
+    <li><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
+    <%= image_tag 'cryptovoxels_map2.png', size: '300x300'%>
+  </div>
+  <div class="somniumspace">
+    <li><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
+    <%= image_tag 'somniumspace_map2.png', size: '300x300'%>
+  </div>
+</div>
