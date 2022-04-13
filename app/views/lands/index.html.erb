@@ -1,25 +1,31 @@
-<div class="top-image">
-  Let's make effective use of metaverse lands!
-
-  <div class="map-container">
-    <div class="slider">
-        <li><%= link_to 'Decentraland', platforms_decentraland_path %></li>
-        <%= image_tag 'decentraland_map2.png', size: '300x300'%>
-
-        <li><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
-        <%= image_tag 'thesandbox_map2.png', size: '300x300'%>
-
-        <li><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
-        <%= image_tag 'cryptovoxels_map2.png', size: '300x300'%>
-
-        <li><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
-        <%= image_tag 'somniumspace_map2.png', size: '300x300'%>
+<div class="index">
+  <div class="index-container">
+    <div class="phrase">
+      <span>Let's make effective use of metaverse lands!</span>
     </div>
 
-    <div class="slider">
-      <%= image_tag 'decentraland_map2.png', size: '300x300'%>
-      <%= image_tag 'thesandbox_map2.png', size: '300x300'%>
-      <%= image_tag 'cryptovoxels_map2.png', size: '300x300'%>
+    <div class="maps">
+      <div class="slider">
+        <div class="index-map">
+          <li><%= link_to 'Decentraland', platforms_decentraland_path %></li>
+          <%= image_tag 'decentraland_map2.png', size: '450x450' %>
+        </div>
+
+        <div class="index-map">
+          <li><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
+          <%= image_tag 'thesandbox_map2.png', size: '450x450' %>
+        </div>
+
+        <div class="index-map">
+          <li><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
+          <%= image_tag 'cryptovoxels_map2.png', size: '450x450' %>
+        </div>
+
+        <div class="index-map">
+          <li><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
+          <%= image_tag 'somniumspace_map2.png', size: '450x450' %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
