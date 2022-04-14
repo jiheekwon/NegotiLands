@@ -2,7 +2,6 @@
   height: 650px;
   background-image: url("<%= asset_path('negotilands_index.jpg') %>");
   background-size: cover;
-  padding: 20px;
 }
 
 .index-container{
@@ -10,6 +9,44 @@
   justify-content: space-between;
 }
 
+.maps{
+  width: 50%;
+  height: calc( 100vh - 90px );
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.explain{
+  color: white;
+  margin: 10px 20px;
+}
+
+.maps-container{
+  margin: 0 100px;
+}
+
 .slider{
   width: 450px;
+}
+
+.map-name{
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.map-name a{
+  color: white;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.phrase-container{
+  font-size: 50px;
+  font-weight: bold;
+  width: 50%;
+  padding-left: 140px;
+}
+
+.phrase{
+  margin-top: 160px;
 }

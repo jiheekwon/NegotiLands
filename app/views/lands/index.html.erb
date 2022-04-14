@@ -1,31 +1,39 @@
 <div class="index">
   <div class="index-container">
-    <div class="phrase">
-      <span>Let's make effective use of metaverse lands!</span>
+
+    <div class="phrase-container">
+      <div class="phrase">
+        Let's make effective use<br/>of metaverse lands!
+      </div>
     </div>
 
     <div class="maps">
-      <div class="slider">
-        <div class="index-map">
-          <li><%= link_to 'Decentraland', platforms_decentraland_path %></li>
-          <%= image_tag 'decentraland_map2.png', size: '450x450' %>
-        </div>
+      <div class="explain">Click on the map you are interested in.</div>
 
-        <div class="index-map">
-          <li><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
-          <%= image_tag 'thesandbox_map2.png', size: '450x450' %>
-        </div>
+      <div class="maps-container">
+        <div class="slider">
+          <div class="index-map">
+            <li class="map-name"><%= link_to 'Decentraland', platforms_decentraland_path %></li>
+            <%= image_tag 'decentraland_map2.png', size: '450x450' %>
+          </div>
 
-        <div class="index-map">
-          <li><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
-          <%= image_tag 'cryptovoxels_map2.png', size: '450x450' %>
-        </div>
+          <div class="index-map">
+            <li class="map-name"><%= link_to 'The Sandbox', platforms_thesandbox_path %></li>
+            <%= image_tag 'thesandbox_map2.png', size: '450x450' %>
+          </div>
 
-        <div class="index-map">
-          <li><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
-          <%= image_tag 'somniumspace_map2.png', size: '450x450' %>
+          <div class="index-map">
+            <li class="map-name"><%= link_to 'Cryptovoxels', platforms_cryptovoxels_path %></li>
+            <%= image_tag 'cryptovoxels_map2.png', size: '450x450' %>
+          </div>
+
+          <div class="index-map">
+            <li class="map-name"><%= link_to 'Somnium Space', platforms_somniumspace_path %></li>
+            <%= image_tag 'somniumspace_map2.png', size: '450x450' %>
+          </div>
         </div>
       </div>
     </div>
+
   </div>
 </div>
