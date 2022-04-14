@@ -29,7 +29,7 @@ class LandsController < ApplicationController
   def update
     @land = Land.find(params[:id])
     if @land.update(land_params)
-      redirect_to root_path
+      redirect_to land_path(@land)
     else
       render :edit
     end
@@ -48,7 +48,8 @@ class LandsController < ApplicationController
   end
 
   def move_to_index
-    if user_signed_in? && current_user.id != @item.user_id
+    @land = Land.find(params[:id])
+    if user_signed_in? && current_user.id != @land.user_id
       redirect_to root_path
     end
   end

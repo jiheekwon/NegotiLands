@@ -12,6 +12,11 @@
   color: white;
 }
 
+.header-link{
+  text-decoration: none;
+  color: white;
+}
+
 .left-header{
   padding-left: 10px;
   font-size: 28px;

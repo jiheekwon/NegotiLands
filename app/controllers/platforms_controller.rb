@@ -3,6 +3,7 @@ class PlatformsController < ApplicationController
   end
 
   def thesandbox
+    @lands = Land.where(platform_id: 3)
   end
 
   def cryptovoxels
