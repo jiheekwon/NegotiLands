@@ -4,27 +4,32 @@
 </div>
 
 <div class="rental-lands">
-  <% @lands.each do |land| %>
-    <div class="rental-land">
-      <div class="rental-land-container">
-        <div class="rental-land-image rental-content">
-          <%= link_to land_path(land), class:"link" do %>
-            <% if land.image.attached? %>
-              <%= image_tag land.image, size: '200x200' %>
-            <% else%>
-              <%= image_tag 'noimage.jpg', size: '200x200' %>
+  <% if @lands.present? %>
+    <% @lands.each do |land| %>
+      <div class="rental-land">
+        <div class="rental-land-container">
+          <div class="rental-land-image rental-content">
+            <%= link_to land_path(land), class:"link" do %>
+              <% if land.image.attached? %>
+                <%= image_tag land.image, size: '200x200' %>
+              <% else%>
+                <%= image_tag 'noimage.jpg', size: '200x200' %>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-        <div class="rental-land-location rental-content">
-          Location: <%= land.location_x %>, <%= land.location_y %>
-        </div>
-        <div class="rental-land-fee rental-content">
-          Fee: $<%= land.fee_num %>/<%= land.fee_mdy.name %>
-        </div>
-        <div class="rental-land-term rental-content">
-          Term: <%= land.term_num %><%= land.term_mdy.name %>
+          </div>
+          <div class="rental-land-location rental-content">
+            Location: <%= land.location_x %>, <%= land.location_y %>
+          </div>
+          <div class="rental-land-fee rental-content">
+            Fee: $<%= land.fee_num %>/<%= land.fee_mdy.name %>
+          </div>
+          <div class="rental-land-term rental-content">
+            Term: <%= land.term_num %><%= land.term_mdy.name %>
+          </div>
         </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+    No Rental Land
   <% end %>
+</div>
