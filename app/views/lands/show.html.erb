@@ -1,8 +1,8 @@
 <div>
   <% if @land.image.attached? %>
-    <%= image_tag @land.image %>
+    <%= image_tag @land.image, size: '300x300' %>
   <% else %>
-    <%= image_tag 'noimage.png', size: '300x300' %>
+    <%= image_tag 'noimage.jpg', size: '300x300' %>
   <% end %>
 </div>
 
@@ -22,7 +22,7 @@
 </div>
 
 <div>
-  Lender
+  Renter
   <%= @land.user.nickname %>
 </div>
 
