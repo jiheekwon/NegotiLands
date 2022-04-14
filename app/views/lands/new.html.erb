@@ -1,22 +1,40 @@
-<%= form_with model: @land, url: lands_path, local: true do |f| %>
-    <%= f.label :image %><br/>
-    <%= f.file_field :image %><br/>
+<div class="new">
+  <div class="new-container">
+    <%= form_with model: @land, url: lands_path, local: true do |f| %>
+      <div class="form-contents">
+        <div class="new-explain">Fill in information of the land.</div>
+        <div class="form-content first-content">
+          <div class="content-title">Image</div>
+          <%= f.file_field :image %>
+        </div>
 
-    <%= f.label :platform %><br/>
-    <%= f.collection_select(:platform_id, Platform.all, :id, :name, {}) %><br/>
+        <div class="form-content">
+          <div class="content-title">Platform</div>
+          <%= f.collection_select(:platform_id, Platform.all, :id, :name, {}) %>
+        </div>
 
-    Location<br/>
-    <%= f.text_field :location_x %>
-    <%= f.text_field :location_y %><br/>
+        <div class="form-content">
+          <div class="content-title">Location</div>
+          <%= f.text_field :location_x %>
+          <%= f.text_field :location_y %>
+        </div>
 
-    Fee<br/>
-    $<%= f.text_field :fee_num %>
-    /<%= f.collection_select(:fee_mdy_id, FeeMdy.all, :id, :name, {}) %><br/>
+        <div class="form-content">
+          <div class="content-title">Fee</div>
+          $<%= f.text_field :fee_num %>
+          /<%= f.collection_select(:fee_mdy_id, FeeMdy.all, :id, :name, {}) %>
+        </div>
 
-    Term<br/>
-    <%= f.text_field :term_num %>
-    <%= f.collection_select(:term_mdy_id, TermMdy.all, :id, :name, {}) %><br/>
+        <div class="form-content">
+          <div class="content-title">Term</div>
+          <%= f.text_field :term_num %>
+          <%= f.collection_select(:term_mdy_id, TermMdy.all, :id, :name, {}) %>
+        </div>
 
-    <%= f.submit "Submit" %>
-
-<% end %>
+        <div class="form-btn">
+          <%= f.submit "Submit" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
