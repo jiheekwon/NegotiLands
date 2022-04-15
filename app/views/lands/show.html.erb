@@ -1,34 +1,46 @@
-<div>
-  <% if @land.image.attached? %>
-    <%= image_tag @land.image, size: '300x300' %>
-  <% else %>
-    <%= image_tag 'noimage.jpg', size: '300x300' %>
-  <% end %>
-</div>
+<div class="show">
+  <div class="show-container">
+    <div class="show-content">
+      <% if @land.image.attached? %>
+        <%= image_tag @land.image, size: '300x300' %>
+      <% else %>
+        <%= image_tag 'noimage.jpg', size: '300x300' %>
+      <% end %>
+    </div>
 
-<div>
-  Location
-  <%= @land.location_x %> : <%= @land.location_y %>
-</div>
+    <div class="show-content">
+      Location
+      <%= @land.location_x %> : <%= @land.location_y %>
+    </div>
 
-<div>
-  Fee
-  $<%= @land.fee_num %>/<%= @land.fee_mdy.name %>
-</div>
+    <div class="show-content">
+      Fee
+      $<%= @land.fee_num %>/<%= @land.fee_mdy.name %>
+    </div>
 
-<div>
-  Term
-  <%= @land.term_num %>/<%= @land.term_mdy.name %>
-</div>
+    <div class="show-content">
+      Term
+      <%= @land.term_num %>/<%= @land.term_mdy.name %>
+    </div>
 
-<div>
-  Renter
-  <%= @land.user.nickname %>
-</div>
+    <div class="show-content"> 
+      Renter
+      <%= @land.user.nickname %>
+    </div>
 
-<% if user_signed_in? && @land.user_id == current_user.id %>
-  <%= link_to "Edit", edit_land_path(@land) %>
-  <%= link_to "Remove", root_path %>
-<% else %>
-  <%= link_to "Contact", root_path %>
-<% end %>
+    <% if user_signed_in? && @land.user_id == current_user.id %>
+      <div class="task-btns">
+        <div class="task-btn">
+          <%= link_to "Edit", edit_land_path(@land), class: "show-link" %>
+        </div>
+        <div class="task-btn">
+          <%= link_to "Remove", root_path, class: "show-link" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="contact-btn">
+        <%= link_to "Contact", root_path, class: "show-link" %>
+      </div>
+    <% end %>
+  </div>
+</div>

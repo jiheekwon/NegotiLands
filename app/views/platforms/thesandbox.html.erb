@@ -1,6 +1,10 @@
 <div class="platform-map">
-  <span class="platform-title">The Sandbox</span>
-  <%= link_to 'Will you rent your land?', new_land_path %>
+  <div class="platform-title">
+    <%= image_tag 'https://www.sandbox.game/img/01_Top_Bar/TheSandboxLogo.svg' %>
+  </div>
+  <div class="new-path">
+    <%= link_to 'Will you rent your land?', new_land_path, class:"new-btn" %>
+  </div>
 </div>
 
 <div class="rental-lands">

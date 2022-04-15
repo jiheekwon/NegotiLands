@@ -1,5 +1,5 @@
 .index{
-  height: 650px;
+  height: calc( 100vh - 90px );
   background-image: url("<%= asset_path('negotilands_index.jpg') %>");
   background-size: cover;
 }
@@ -49,4 +49,8 @@
 
 .phrase{
   margin-top: 160px;
+}
+
+.index-map img:hover{
+  transform: scale(0.8, 0.8);
 }
