@@ -1,5 +1,5 @@
-<div class="platform-map">
-  <div class="platform-title">
+<div class="thesandbox-map">
+  <div class="thesandbox-title">
     <%= image_tag 'https://www.sandbox.game/img/01_Top_Bar/TheSandboxLogo.svg' %>
   </div>
   <div class="new-path">
@@ -22,7 +22,7 @@
             <% end %>
           </div>
           <div class="rental-land-location rental-content">
-            Location: <%= land.location_x %>, <%= land.location_y %>
+            Location: <%= land.location_x %>:<%= land.location_y %>
           </div>
           <div class="rental-land-fee rental-content">
             Fee: $<%= land.fee_num %>/<%= land.fee_mdy.name %>
