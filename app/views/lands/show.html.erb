@@ -34,7 +34,7 @@
           <%= link_to "Edit", edit_land_path(@land), class: "show-link" %>
         </div>
         <div class="task-btn">
-          <%= link_to "Remove", root_path, class: "show-link" %>
+          <%= link_to "Remove", land_path(@land), method: :delete, class: "show-link" %>
         </div>
       </div>
     <% else %>

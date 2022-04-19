@@ -16,7 +16,16 @@ class LandsController < ApplicationController
   def create
     @land = Land.new(land_params)
     if @land.save
-      redirect_to root_path
+      case @land.platform_id
+      when 2
+        redirect_to platforms_decentraland_path
+      when 3
+        redirect_to platforms_thesandbox_path
+      when 4
+        redirect_to platforms_cryptovoxels_path
+      when 5
+        redirect_to platforms_somniumspace_path
+      end
     else
       render :new
     end
@@ -38,7 +47,16 @@ class LandsController < ApplicationController
   def destroy
     @land = Land.find(params[:id])
     @land.destroy
-    redirect_to root_path
+    case @land.platform_id
+    when 2
+      redirect_to platforms_decentraland_path
+    when 3
+      redirect_to platforms_thesandbox_path
+    when 4
+      redirect_to platforms_cryptovoxels_path
+    when 5
+      redirect_to platforms_somniumspace_path
+    end
   end
 
   private

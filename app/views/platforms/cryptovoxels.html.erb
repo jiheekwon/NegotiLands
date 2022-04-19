@@ -1,1 +1,41 @@
-Cryptovoxels
+<div class="cryptovoxels-map">
+  <div class="cryptovoxels-title">
+    <%= image_tag 'https://www.esports.net/wp-content/uploads/2022/02/Cryptovoxels.jpg', size: '300x130' %>
+  </div>
+  <div class="cryptovoxels-new new-path">
+    <%= link_to 'Will you rent your land?', new_land_path, class:"new-btn" %>
+  </div>
+</div>
+
+<div class="rental-lands">
+  <% if @lands.present? %>
+    <% @lands.each do |land| %>
+      <div class="rental-land">
+        <div class="rental-land-container">
+          <div class="rental-land-image rental-content">
+            <%= link_to land_path(land), class:"link" do %>
+              <% if land.image.attached? %>
+                <%= image_tag land.image, size: '200x200' %>
+              <% else%>
+                <%= image_tag 'noimage.jpg', size: '200x200' %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="rental-land-location rental-content">
+            Location: <%= land.location_x %>:<%= land.location_y %>
+          </div>
+          <div class="rental-land-fee rental-content">
+            Fee: $<%= land.fee_num %>/<%= land.fee_mdy.name %>
+          </div>
+          <div class="rental-land-term rental-content">
+            Term: <%= land.term_num %><%= land.term_mdy.name %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="no-land">
+      No Rental Land
+    </div>
+  <% end %>
+</div>
