@@ -1,1 +1,41 @@
-Somnium Space
+<div class="somniumspace-map">
+  <div class="somniumspace-title">
+    <%= image_tag 'https://manamina.valuesccg.com/uploads/content/image/36488/5.png', size: '300x100' %>
+  </div>
+  <div class="somniumspace-new new-path">
+    <%= link_to 'Will you rent your land?', new_land_path, class:"new-btn" %>
+  </div>
+</div>
+
+<div class="rental-lands">
+  <% if @lands.present? %>
+    <% @lands.each do |land| %>
+      <div class="rental-land">
+        <div class="rental-land-container">
+          <div class="rental-land-image rental-content">
+            <%= link_to land_path(land), class:"link" do %>
+              <% if land.image.attached? %>
+                <%= image_tag land.image, size: '200x200' %>
+              <% else%>
+                <%= image_tag 'noimage.jpg', size: '200x200' %>
+              <% end %>
+            <% end %>
+          </div>
+          <div class="rental-land-location rental-content">
+            Location: <%= land.location_x %>:<%= land.location_y %>
+          </div>
+          <div class="rental-land-fee rental-content">
+            Fee: $<%= land.fee_num %>/<%= land.fee_mdy.name %>
+          </div>
+          <div class="rental-land-term rental-content">
+            Term: <%= land.term_num %><%= land.term_mdy.name %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% else %>
+    <div class="no-land">
+      No Rental Land
+    </div>
+  <% end %>
+</div>

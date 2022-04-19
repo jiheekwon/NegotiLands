@@ -11,7 +11,7 @@ class PlatformsController < ApplicationController
     @lands = Land.where(platform_id: 4)
   end
 
-  def somuniumspace
+  def somniumspace
     @lands = Land.where(platform_id: 5)
   end
 
